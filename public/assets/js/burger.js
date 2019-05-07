@@ -2,7 +2,8 @@ $(function(){
     //devour function on click
     $(".change-eaten").on("click", function(event){
         event.preventDefault();
-        var id = $(this).data("data-id");
+        var id = $(this).data("id");
+        console.log(id);
     
 
     $.ajax("/api/" + id, {

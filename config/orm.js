@@ -20,13 +20,13 @@ var orm = {
         })
     },
     updateOne: function(table, col, colVal, setCol, setVal, cb){
-        var query = "UPDATE ?? WHERE ?? = ? SET ?? = ?;";
-        connection.query(query, [table, col, colVal, setCol, setVal], function(err, res){
+        var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?;";
+        connection.query(queryString, [table, col, colVal, setCol, setVal], function(err, res){
             if (err) {
                 throw err;
             }
             cb(res);
-        })
+        });
     }
 }
 
