@@ -12,9 +12,17 @@ router.get("/", function(req, res){
     })
 })
 
-// router.post("/new/:burger", function(req, res){
-//     res.render("index");
-// })
+router.put("/api/:id", function(req, res){
+    var id = req.params.id
+    burger.updateOne(id, function(results){
+        if (result.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+          } else {
+            res.status(200).end();
+          }
+    })
+})
 
 // router.update("/update/:burger", function(req, res){
 //     res.render("index");
