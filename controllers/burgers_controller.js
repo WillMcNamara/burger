@@ -12,12 +12,12 @@ router.get("/", function(req, res){
     })
 })
 
-router.post("/new/:burger", function(req, res){
-    res.render("index");
-})
+// router.post("/new/:burger", function(req, res){
+//     res.render("index");
+// })
 
-router.update("/update/:burger", function(req, res){
-    res.render("index");
-})
+// router.update("/update/:burger", function(req, res){
+//     res.render("index");
+// })
 
 module.exports = router;
