@@ -17,4 +17,20 @@ $(function(){
     });
 
     //submit new burger function on click
+    $("form").on("submit", function(event){
+        event.preventDefault();
+        var newBurger = {
+            name: $("#burg").val().trim()
+        };
+
+        $.ajax("/api/", {
+            type: "POST",
+            data: newBurger
+        }).then(
+            function(){
+                console.log("hello there future me")
+                location.reload();
+            }
+        )
+    })
 })

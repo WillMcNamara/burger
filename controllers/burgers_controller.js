@@ -24,8 +24,11 @@ router.put("/api/:id", function(req, res){
     })
 })
 
-// router.update("/update/:burger", function(req, res){
-//     res.render("index");
-// })
+router.post("/api/", function(req, res){
+    var burger_name = req.body.name;
+    burger.insertOne(burger_name, function(results){
+        res.json({ id: results.insertId });
+    })
+})
 
 module.exports = router;

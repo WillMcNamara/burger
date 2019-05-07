@@ -9,8 +9,8 @@ var burger = {
         });
     },
     
-    insertOne: function(burger_id, cb){
-        orm.insertOne("burgers", "id", burger_id, function(res){
+    insertOne: function(burger_name, cb){
+        orm.insertOne("burgers", "burger_name", burger_name, function(res){
             cb(res);
         });
     },
